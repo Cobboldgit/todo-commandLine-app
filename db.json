@@ -1,0 +1,20 @@
+{
+  "todos": [
+    {
+      "title": "code",
+      "complete": false
+    },
+    {
+      "title": "eat",
+      "complete": true
+    },
+    {
+      "title": "sleep",
+      "complete": true
+    },
+    {
+      "title": "repeat",
+      "complete": false
+    }
+  ]
+}
