@@ -27,12 +27,13 @@ const usage = () => {
 
     n means the todo number
 
-    new:          used to create a new todo
-    get:          used to retrieve your todos
-    complete <n>: used to mark a todo as complete
-    delete  <n>:  used to delete a todo
-    clear:        used to clear todos
-    help:         used to print the usage guide
+    new:              used to create a new todo
+    get:              used to retrieve your todos
+    complete <n>:     used to mark a todo as complete
+    delete  <n>:      used to delete a todo
+    clear:            used to clear todos
+    help:             used to print the usage guide
+    --version or -v:  used to check app version
   `;
 
   console.log(usageText);
@@ -53,7 +54,7 @@ if (args.length > 3) {
 }
 
 // ==================== commands =============================
-const commands = ["new", "get", "complete", "help", "clear", "delete"];
+const commands = ["new", "get", "complete", "help", "clear", "delete", "--version", "-v"];
 
 // ======================== check if command is in commands array =====================
 if (commands.indexOf(args[2]) == -1) {
@@ -75,6 +76,11 @@ const prompt = (question) => {
     });
   });
 };
+
+// ========== check version =============
+const appVersion = () => {
+  console.log("1.0.0");
+}
 
 // ======================== add new todo ======================
 const newTodo = () => {
@@ -196,6 +202,12 @@ switch (args[2]) {
   case "help":
     usage();
     break;
+  case '--version':
+    appVersion()
+    break
+  case '-v':
+    appVersion()
+    break
   case "new":
     newTodo();
     break;
